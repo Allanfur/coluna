@@ -29,6 +29,10 @@ button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{ou
 .top .in{max-width:1240px;margin:0 auto}
 .top h1{margin:0;font-size:clamp(30px,4.2vw,46px);line-height:1.05;text-wrap:balance}
 .top p{margin:8px 0 0;opacity:.85;font-size:16px}
+.top .tr{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.hbtn{border:1.5px solid rgba(255,255,255,.6);background:rgba(255,255,255,.12);color:#fff;border-radius:999px;padding:9px 18px;min-height:44px;cursor:pointer;font-weight:700;font-size:15px;white-space:nowrap}
+.hbtn:hover{background:rgba(255,255,255,.22)}
+.hbtn .s{display:none}
 .tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
 .tabs button{border:0;background:rgba(255,255,255,.14);color:#fff;padding:11px 18px;border-radius:12px 12px 0 0;cursor:pointer;min-height:44px}
 .tabs button[aria-pressed=true]{background:var(--bg);color:var(--ink);font-weight:700}
@@ -177,13 +181,13 @@ details.toc a{color:var(--blue);text-decoration:none;cursor:pointer}
 .msg{margin:10px 0 0;font-size:15px;min-height:1.2em}.msg.ok{color:var(--ok)}.msg.bad{color:var(--bad)}
 @media(max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)}.sheet{position:static}.grid{max-height:300px}
   .rz{grid-template-columns:minmax(0,1fr);gap:18px}.side{position:static;max-height:none}#temas{display:none}#temasel{display:block}.tabs .rzt{margin-left:0}}
-@media(max-width:600px){.stem p{font-size:18px}.opt{padding:12px}.keys{display:none}.tabs button{padding:10px 12px;font-size:15px}.it .l2,.it .l3{margin-left:30px}}
+@media(max-width:600px){.hbtn .l{display:none}.hbtn .s{display:inline}.hbtn{padding:8px 14px;flex:none}.top .tr{flex-wrap:nowrap}.top h1{font-size:26px}.stem p{font-size:18px}.opt{padding:12px}.keys{display:none}.tabs button{padding:10px 12px;font-size:15px}.it .l2,.it .l3{margin-left:30px}}
 @media(prefers-reduced-motion:reduce){.opt{transition:none}.flash{animation:none}}
 </style>
 </head>
 <body>
 <header class="top"><div class="in">
-  <h1>Revisão de Coluna</h1>
+  <div class="tr"><h1>Revisão de Coluna</h1><button class="hbtn" id="progb"><span class="l">Salvar / carregar progresso</span><span class="s">Progresso</span></button></div>
   <p id="sub">Questões com correção na hora e resumo por tema</p>
   <div class="tabs" id="tabs" role="group" aria-label="Seções"></div>
 </div></header>
@@ -211,7 +215,6 @@ details.toc a{color:var(--blue);text-decoration:none;cursor:pointer}
       <button class="btn" id="shuf">Embaralhar ordem</button>
       <button class="btn" id="redo">Refazer erradas</button>
       <button class="btn" id="reset">Recomeçar</button>
-      <button class="btn" id="progb">Salvar / carregar progresso</button>
     </div>
   </aside>
 </main>
